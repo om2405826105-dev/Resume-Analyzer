@@ -1,0 +1,123 @@
+{
+  "career_paths": {
+    "Software Developer": {
+      "required_skills": ["Python", "Java", "C++", "Git", "Data Structures", "Algorithms", "OOP", "REST API", "SQL", "Linux"],
+      "optional_skills": ["Docker", "Kubernetes", "CI/CD", "Agile", "System Design", "TypeScript"],
+      "roadmap": [
+        "Learn a programming language (Python / Java / C++)",
+        "Understand Data Structures & Algorithms",
+        "Study Object-Oriented Programming",
+        "Learn Version Control with Git",
+        "Build 3–5 real-world projects",
+        "Learn Database Basics (SQL)",
+        "Understand REST APIs",
+        "Practice on LeetCode / HackerRank",
+        "Contribute to Open Source",
+        "Apply for internships and jobs"
+      ],
+      "description": "Design, build, and maintain software applications across platforms.",
+      "avg_salary": "₹6–18 LPA",
+      "icon": "💻"
+    },
+    "Data Scientist": {
+      "required_skills": ["Python", "Machine Learning", "Statistics", "Pandas", "NumPy", "SQL", "Data Visualization", "Scikit-learn"],
+      "optional_skills": ["TensorFlow", "PyTorch", "Deep Learning", "NLP", "Big Data", "Spark", "Tableau"],
+      "roadmap": [
+        "Master Python Programming",
+        "Learn Statistics & Probability",
+        "Study Data Analysis with Pandas & NumPy",
+        "Understand Machine Learning Algorithms",
+        "Practice with real datasets (Kaggle)",
+        "Learn Data Visualization (Matplotlib, Seaborn)",
+        "Study Deep Learning basics",
+        "Build an end-to-end ML project",
+        "Learn SQL for data querying",
+        "Apply for Data Science roles"
+      ],
+      "description": "Extract insights from complex data using statistical and ML techniques.",
+      "avg_salary": "₹8–25 LPA",
+      "icon": "📊"
+    },
+    "Web Developer": {
+      "required_skills": ["HTML", "CSS", "JavaScript", "React", "Node.js", "Git", "REST API", "Responsive Design"],
+      "optional_skills": ["TypeScript", "Vue.js", "Angular", "MongoDB", "GraphQL", "Webpack", "Next.js"],
+      "roadmap": [
+        "Learn HTML & CSS fundamentals",
+        "Master JavaScript (ES6+)",
+        "Study a Frontend Framework (React / Vue)",
+        "Learn Version Control with Git",
+        "Build responsive websites",
+        "Learn Backend basics (Node.js / Express)",
+        "Understand Databases (MongoDB / SQL)",
+        "Deploy projects on Netlify / Vercel",
+        "Learn REST API integration",
+        "Build a full-stack portfolio project"
+      ],
+      "description": "Create interactive and visually appealing web applications.",
+      "avg_salary": "₹4–15 LPA",
+      "icon": "🌐"
+    },
+    "Data Analyst": {
+      "required_skills": ["SQL", "Excel", "Python", "Data Visualization", "Statistics", "Tableau", "Power BI"],
+      "optional_skills": ["R", "Pandas", "NumPy", "ETL", "Business Intelligence", "DAX"],
+      "roadmap": [
+        "Learn SQL for data querying",
+        "Master Excel and Google Sheets",
+        "Study Statistics & Data Interpretation",
+        "Learn Python for data analysis",
+        "Practice with Tableau / Power BI",
+        "Study Business Intelligence concepts",
+        "Work on real-world datasets",
+        "Learn data cleaning techniques",
+        "Build a data analysis portfolio",
+        "Apply for analyst roles"
+      ],
+      "description": "Interpret data to help businesses make informed decisions.",
+      "avg_salary": "₹4–12 LPA",
+      "icon": "📈"
+    },
+    "Cyber Security Engineer": {
+      "required_skills": ["Networking", "Linux", "Python", "Ethical Hacking", "Firewalls", "Cryptography", "SIEM"],
+      "optional_skills": ["Penetration Testing", "OWASP", "Cloud Security", "Forensics", "CEH", "CISSP"],
+      "roadmap": [
+        "Learn Networking fundamentals (TCP/IP, OSI)",
+        "Study Linux command line",
+        "Understand basic cryptography",
+        "Learn ethical hacking basics",
+        "Study common vulnerabilities (OWASP Top 10)",
+        "Practice on TryHackMe / HackTheBox",
+        "Learn Security tools (Wireshark, Nmap, Metasploit)",
+        "Get certified (CEH / CompTIA Security+)",
+        "Study cloud security concepts",
+        "Apply for security analyst roles"
+      ],
+      "description": "Protect systems and networks from digital attacks and breaches.",
+      "avg_salary": "₹6–20 LPA",
+      "icon": "🔐"
+    }
+  },
+  "all_skills": [
+    "Python", "Java", "C++", "C", "JavaScript", "TypeScript", "R", "Go", "Rust", "Swift",
+    "HTML", "CSS", "React", "Angular", "Vue.js", "Node.js", "Next.js", "Bootstrap",
+    "SQL", "MySQL", "PostgreSQL", "MongoDB", "SQLite", "Redis", "Firebase",
+    "Machine Learning", "Deep Learning", "NLP", "TensorFlow", "PyTorch", "Scikit-learn",
+    "Pandas", "NumPy", "Matplotlib", "Seaborn", "Data Visualization", "Statistics",
+    "Tableau", "Power BI", "Excel", "Data Analysis",
+    "Git", "GitHub", "Docker", "Kubernetes", "CI/CD", "Jenkins", "Linux",
+    "REST API", "GraphQL", "Microservices", "Agile", "Scrum", "OOP",
+    "Networking", "Ethical Hacking", "Cryptography", "Firewalls", "SIEM",
+    "Data Structures", "Algorithms", "System Design", "Cloud", "AWS", "Azure", "GCP"
+  ],
+  "improvement_rules": {
+    "no_github": "Add a GitHub profile link to showcase your projects",
+    "no_linkedin": "Add a LinkedIn profile URL for professional visibility",
+    "no_email": "Ensure your email address is clearly mentioned",
+    "no_phone": "Include a contact phone number",
+    "short_resume": "Your resume seems short. Add more detail to projects and experience",
+    "no_projects": "Add at least 2–3 projects with descriptions and tech stack",
+    "no_achievements": "Include measurable achievements (e.g., 'Improved performance by 30%')",
+    "weak_verbs": "Use strong action verbs: Developed, Implemented, Designed, Optimized, Led",
+    "no_education": "Ensure your education section is clearly listed",
+    "no_certifications": "Add relevant certifications to strengthen your profile"
+  }
+}

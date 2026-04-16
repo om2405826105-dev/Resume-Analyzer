@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Resume Analyzer | Career Path Recommender</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"/>
+</head>
+<body>
+
+  <!-- ── Navigation ── -->
+  <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="/">
+        <span class="brand-icon">⚡</span> ResumeAI
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+          <li class="nav-item"><a class="nav-link" href="#how-it-works">How It Works</a></li>
+          {% if current_user.is_authenticated %}
+          <li class="nav-item"><a class="nav-link" href="/history">History</a></li>
+          <li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
+          <li class="nav-item">
+            <a class="nav-link btn-nav" href="/upload">Analyze Resume</a>
+          </li>
+          {% else %}
+          <li class="nav-item"><a class="nav-link" href="/login">Log In</a></li>
+          <li class="nav-item">
+            <a class="nav-link btn-nav" href="/register">Sign Up</a>
+          </li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ── Hero Section ── -->
+  <section class="hero-section" id="home">
+    <div class="hero-bg-grid"></div>
+    <div class="hero-orb orb-1"></div>
+    <div class="hero-orb orb-2"></div>
+    <div class="container">
+      <div class="row align-items-center min-vh-100">
+        <div class="col-lg-7">
+          <div class="hero-badge">🎓 College Project · AI + NLP</div>
+          <h1 class="hero-title">
+            Analyze Your Resume.<br/>
+            <span class="highlight">Unlock Your Career.</span>
+          </h1>
+          <p class="hero-subtitle">
+            Upload your resume and get instant AI-powered insights — skill extraction,
+            resume scoring, career path recommendations, and a personalized learning roadmap.
+          </p>
+          <div class="hero-actions">
+            <a href="/upload" class="btn btn-primary-custom btn-lg">
+              <i class="fas fa-upload me-2"></i>Analyze My Resume
+            </a>
+            <a href="#how-it-works" class="btn btn-outline-custom btn-lg ms-3">
+              See How It Works
+            </a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat-item">
+              <span class="stat-num">5+</span>
+              <span class="stat-label">Career Paths</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num">50+</span>
+              <span class="stat-label">Skills Detected</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num">100</span>
+              <span class="stat-label">Score Points</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-5 d-none d-lg-block">
+          <div class="hero-card-mockup">
+            <div class="mockup-card">
+              <div class="mockup-header">
+                <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+                <span class="mockup-title">Resume Analysis</span>
+              </div>
+              <div class="mockup-score">
+                <div class="score-ring">
+                  <span class="score-num">84</span>
+                  <span class="score-label">/100</span>
+                </div>
+                <div class="score-info">
+                  <strong>Great Resume!</strong>
+                  <p>Top Match: Data Scientist</p>
+                </div>
+              </div>
+              <div class="mockup-skills">
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">SQL</span>
+                <span class="skill-tag">ML</span>
+                <span class="skill-tag">Pandas</span>
+                <span class="skill-tag">+6 more</span>
+              </div>
+              <div class="mockup-bar">
+                <div class="bar-label">Data Scientist <span>82%</span></div>
+                <div class="progress-bar-custom"><div style="width:82%"></div></div>
+              </div>
+              <div class="mockup-bar">
+                <div class="bar-label">Data Analyst <span>65%</span></div>
+                <div class="progress-bar-custom"><div style="width:65%"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Features Section ── -->
+  <section class="features-section" id="features">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="section-tag">What We Offer</div>
+        <h2 class="section-title">Powerful Analysis Features</h2>
+        <p class="section-subtitle">Everything you need to understand your resume and plan your career.</p>
+      </div>
+      <div class="row g-4 mt-4">
+        <div class="col-md-4">
+          <div class="feature-card">
+            <div class="feature-icon">🔍</div>
+            <h3>Resume Parsing</h3>
+            <p>Extracts text intelligently from PDF and DOCX files using advanced parsing libraries.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="feature-card">
+            <div class="feature-icon">🧠</div>
+            <h3>NLP Skill Detection</h3>
+            <p>Uses Natural Language Processing to identify 50+ technical and soft skills from your resume.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="feature-card">
+            <div class="feature-icon">🎯</div>
+            <h3>Resume Scoring</h3>
+            <p>Calculates a comprehensive score out of 100 based on skills, contact info, education, and projects.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="feature-card">
+            <div class="feature-icon">🚀</div>
+            <h3>Career Recommendations</h3>
+            <p>Suggests the best-fit career paths based on your skill profile with match percentages.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="feature-card">
+            <div class="feature-icon">📉</div>
+            <h3>Skill Gap Analysis</h3>
+            <p>Shows exactly which skills you're missing for your target career so you know what to learn next.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="feature-card">
+            <div class="feature-icon">🗺️</div>
+            <h3>Career Roadmap</h3>
+            <p>A step-by-step learning roadmap for each career path to guide your journey.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── How It Works ── -->
+  <section class="how-section" id="how-it-works">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="section-tag">Process</div>
+        <h2 class="section-title">How It Works</h2>
+      </div>
+      <div class="steps-container mt-5">
+        <div class="step-item">
+          <div class="step-num">01</div>
+          <div class="step-content">
+            <h4>Upload Resume</h4>
+            <p>Upload your PDF or DOCX resume file along with your name and email.</p>
+          </div>
+        </div>
+        <div class="step-arrow">→</div>
+        <div class="step-item">
+          <div class="step-num">02</div>
+          <div class="step-content">
+            <h4>AI Analysis</h4>
+            <p>Our NLP engine parses the text, extracts skills, and evaluates your resume.</p>
+          </div>
+        </div>
+        <div class="step-arrow">→</div>
+        <div class="step-item">
+          <div class="step-num">03</div>
+          <div class="step-content">
+            <h4>Get Results</h4>
+            <p>View your score, matched careers, skill gaps, and improvement suggestions.</p>
+          </div>
+        </div>
+        <div class="step-arrow">→</div>
+        <div class="step-item">
+          <div class="step-num">04</div>
+          <div class="step-content">
+            <h4>Follow Roadmap</h4>
+            <p>Use the generated career roadmap to upskill and land your dream job.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA Section ── -->
+  <section class="cta-section">
+    <div class="container text-center">
+      <h2>Ready to analyze your resume?</h2>
+      <p>Upload now and get your personalized career analysis in seconds.</p>
+      <a href="/upload" class="btn btn-primary-custom btn-lg mt-3">
+        <i class="fas fa-rocket me-2"></i>Get Started — It's Free
+      </a>
+    </div>
+  </section>
+
+  <!-- ── Footer ── -->
+  <footer class="site-footer">
+    <div class="container text-center">
+      <p>⚡ <strong>ResumeAI</strong> — AI Resume Analyzer & Career Path Recommendation System</p>
+      <p class="footer-sub">Built with Flask · NLTK · PyPDF2 · Chart.js · Bootstrap 5</p>
+      <p class="footer-sub">🎓 College Project · Computer Engineering</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Navbar scroll effect
+    window.addEventListener('scroll', () => {
+      const nav = document.getElementById('mainNav');
+      nav.classList.toggle('scrolled', window.scrollY > 50);
+    });
+  </script>
+</body>
+</html>
